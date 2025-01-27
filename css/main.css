@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#Map1 {
+  width: 100vw;
+  height: 100vw;
+  background-color: rgb(32, 32, 32);
+  position: relative;
+}
+
+#Player {
+  position: absolute;
+  bottom: 0vw;
+  left: 0;
+  padding: 10px 0;
+  width: 50px;
+  height: 30px;
+  background: rgb(29, 44, 56);
+  color: rgb(44, 43, 35);
+  text-align: center;
+  font-size: 1rem;
+}
