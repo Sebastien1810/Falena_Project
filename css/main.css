@@ -27,11 +27,13 @@ body {
 
 .ennemies {
   position: absolute;
-  background: rgb(196, 73, 165);
+  background: rgb(83, 78, 82);
   width: 50px;
   height: 50px;
   padding: 3px;
   bottom: : 25vw;
   left: 15vw;
-  border : solid 5px;
+  border :rgb(255, 20, 149) solid 5px;
+  border-radius : 20px;
+  
 }

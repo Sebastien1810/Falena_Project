@@ -76,14 +76,14 @@ class Ennemies {
 
     mapElement.appendChild(this.EnnemiesElm);
 
-    this.speed = 4; // speed of the ennemi/vitesse de l'ennemie
+    this.speed = 2; // speed of the ennemi/vitesse de l'ennemie
   }
 
   ennemiesToPlayer() {
     let diffX = player.positionX - this.positionX;
     let diffY = player.positionY - this.positionY;
 
-    let distancePlayerEnnemies = Math.sqrt(diffX * diffX) + diffY * diffY;
+    let distancePlayerEnnemies = Math.sqrt(diffX * diffX + diffY * diffY); // calcul distance between player and ennemi
 
     if (distancePlayerEnnemies > 0) {
       let directionX = diffX / distancePlayerEnnemies;
@@ -92,19 +92,51 @@ class Ennemies {
       this.positionX += directionX * this.speed;
       this.positionY += directionY * this.speed;
 
+      let moveX = directionX * this.speed;
+      let moveY = directionY * this.speed;
+
+      //formule math.abs for same speed everytime
+      if (Math.abs(moveX) > Math.abs(moveY)) {
+        moveY *= Math.abs(moveX / moveY);
+      } else {
+        moveX *= Math.abs(moveY / moveX);
+      }
+
       this.EnnemiesElm.style.left = this.positionX + "px";
       this.EnnemiesElm.style.top = this.positionY + "px";
     }
   }
 }
 
+ennemiList = [];
+
 const player = new Player();
-const ennemi1 = new Ennemies(100, 500);
+let ennemi1 = new Ennemies(100, 500);
+
+function spawnEnnemi() {
+  const sizeMapX = mapElement.offsetWidth;
+  const sizeMapY = mapElement.offsetHeight;
+
+  let randomX = Math.floor(Math.random() * sizeMapX);
+  let randomY = Math.floor(Math.random() * sizeMapY);
+
+  let newEnnemi = new Ennemies(randomX, randomY);
+  ennemiList.push(newEnnemi);
+
+  ennemiList.forEach((element) => {
+    element.ennemiesToPlayer(player);
+  });
+}
+setInterval(spawnEnnemi, 3000); //spawn a new ennemie every 2second
+
 setInterval(() => {
-  ennemi1.ennemiesToPlayer();
+  ennemiList.forEach((ennemi) => {
+    ennemi.ennemiesToPlayer();
+  });
 }, 1000 / 60);
 
+/*for moving the player 
 player.moveLeft();
 player.moveRight();
 player.moveLeft();
-player.moveRight();
+player.moveRight();*/
