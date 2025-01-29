@@ -6,19 +6,32 @@ body {
 #Map1 {
   width: 100vw;
   height: 100vw;
-  background-color: rgb(32, 32, 32);
   position: relative;
+  background-color: rgb(32, 32, 32);
+  overflow: visible;
 }
 
 #Player {
   position: absolute;
   bottom: 0vw;
   left: 0;
-  padding: 10px 0;
+  padding: 10px ;
   width: 50px;
   height: 30px;
   background: rgb(29, 44, 56);
   color: rgb(44, 43, 35);
   text-align: center;
   font-size: 1rem;
+  border: solid rgb(57, 236, 197) 5px;
+}
+
+.ennemies {
+  position: absolute;
+  background: rgb(196, 73, 165);
+  width: 50px;
+  height: 50px;
+  padding: 3px;
+  bottom: : 25vw;
+  left: 15vw;
+  border : solid 5px;
 }
