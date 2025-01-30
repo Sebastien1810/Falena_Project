@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Over</title>
+  </head>
+  <body>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        flex-direction: column;
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </body>
+  <h1>Game Over</h1>
+  <button onclick="restartGame()">Rejouer</button>
+  <script>
+    function restartGame() {
+      alert("Game Over !");
+      window.location.href = "index.html"; // Redirect to the game
+    }
+  </script>
+</html>

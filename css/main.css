@@ -1,7 +1,9 @@
-body {
+body,
+html {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: black;
 }
 
 #Map1 {
@@ -10,6 +12,28 @@ body {
   height: 100vh;
   background-color: rgb(32, 32, 32);
   overflow: hidden;
+}
+
+/* Effets de néons */
+.neon-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 35, 171, 0.884),
+    transparent 70%
+  );
+  animation: neonPulse 5s infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #Player {
