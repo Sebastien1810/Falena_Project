@@ -1,21 +1,22 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 #Map1 {
-  width: 100vw;
-  height: 100vw;
   position: relative;
+  width: 100vw;
+  height: 100vh;
   background-color: rgb(32, 32, 32);
-  overflow: visible;
+  overflow: hidden;
 }
 
 #Player {
   position: absolute;
   bottom: 0vw;
   left: 0;
-  padding: 10px ;
+  padding: 10px;
   width: 50px;
   height: 30px;
   background: rgb(29, 44, 56);
@@ -23,17 +24,27 @@ body {
   text-align: center;
   font-size: 1rem;
   border: solid rgb(57, 236, 197) 5px;
+  box-sizing: border-box;
 }
 
 .ennemies {
   position: absolute;
   background: rgb(83, 78, 82);
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 20px;
   padding: 3px;
-  bottom: : 25vw;
+  bottom: 25vw;
   left: 15vw;
-  border :rgb(255, 20, 149) solid 5px;
-  border-radius : 20px;
-  
+  border: rgb(255, 20, 149) solid 5px;
+  border-radius: 20px;
+}
+
+.projectile {
+  position: absolute;
+  background: rgb(0, 255, 21);
+  width: 5px;
+  height: 5px;
+  border: solid 3px rgb(57, 236, 197);
+  border-radius: 50%;
+  z-index: 10; /*above all the element*/
 }
