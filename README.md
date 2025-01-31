@@ -14,9 +14,7 @@ Survive!: Once you lose all 3 lives, the game is over.
 🔗 [Play Now](https://sebastien1810.github.io/Falena_Project/)
 
 ⚙️ Technologies Used
-HTML5 Canvas for rendering the game
-JavaScript for game logic
-CSS for styling (with a.i)
+HTML /JavaScript for game logic/CSS for styling (with a.i)
 
 📌 Features that can comming after that version
 New enemy types
