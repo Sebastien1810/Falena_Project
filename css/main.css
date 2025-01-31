@@ -72,3 +72,16 @@ html {
   border-radius: 50%;
   z-index: 10; /*above all the element*/
 }
+
+#livesCounter {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid rgb(57, 236, 197);
+}

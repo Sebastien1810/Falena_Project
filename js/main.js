@@ -1,5 +1,6 @@
 const playerElement = document.getElementById("Player");
 const mapElement = document.getElementById("Map1");
+const livesCounter = document.getElementById("livesCounter");
 
 function createNeonEffect() {
   const neon = document.createElement("div");
@@ -57,6 +58,7 @@ class Player {
   }
   loseLife() {
     this.lives--;
+    livesCounter.textContent = `Vies : ${this.lives}`; // update the ui for the life of the player
     console.log(`Vies restantes: ${this.lives}`);
 
     if (this.lives <= 0) {
@@ -255,6 +257,13 @@ const ennemiList = [];
 let ennemi1 = new Ennemies(100, 500);
 ennemiList.push(ennemi1);
 
+// Fonction pour augmenter la vitesse des ennemis
+function increaseEnemySpeed() {
+  ennemiList.forEach((ennemi) => {
+    ennemi.speed += 0.5; // Augmente la vitesse de 0.5//increase the speed by 0.5
+  });
+  console.log("Vitesse des ennemis augmentée !");
+}
 function spawnEnnemi() {
   const minDistance = 100;
   let randomX, randomY, distance;
@@ -276,6 +285,9 @@ setInterval(
   () => ennemiList.forEach((ennemi) => ennemi.ennemiesToPlayer()),
   1000 / 60
 );
+
+// Augmente la vitesse des ennemis toutes les 30 secondes
+setInterval(increaseEnemySpeed, 3000);
 
 document.addEventListener("click", (event) => {
   if (event.button === 0) {
